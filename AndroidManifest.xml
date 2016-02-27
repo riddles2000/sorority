@@ -1,0 +1,486 @@
+<?xml version="1.0" encoding="utf-8" standalone="no"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    package="com.girl.sorority"
+    platformBuildVersionCode="23"
+    platformBuildVersionName="6.0-2438415">
+
+    <uses-permission android:name="android.permission.INTERNET" />
+    <uses-permission android:name="android.permission.WAKE_LOCK" />
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
+    <uses-permission android:name="android.permission.ACCESS_WIFI_STATE" />
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
+    <uses-permission android:name="android.permission.READ_PHONE_STATE" />
+    <uses-permission android:name="android.permission.BROADCAST_STICKY" />
+    <uses-permission android:name="android.permission.VIBRATE" />
+    <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION" />
+    <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" />
+    <uses-permission android:name="android.permission.RECEIVE_BOOT_COMPLETED" />
+    <uses-permission android:name="com.android.launcher.permission.INSTALL_SHORTCUT" />
+    <uses-permission android:name="com.android.launcher.permission.UNINSTALL_SHORTCUT" />
+    <uses-permission android:name="android.permission.READ_CALENDAR" />
+    <uses-permission android:name="android.permission.WRITE_CALENDAR" />
+    <uses-permission android:name="android.permission.GET_ACCOUNTS" />
+    <uses-permission android:name="com.google.android.c2dm.permission.RECEIVE" />
+
+    <permission
+        android:name="com.girl.sorority.permission.C2D_MESSAGE"
+        android:protectionLevel="signature" />
+
+    <uses-permission android:name="com.girl.sorority.permission.C2D_MESSAGE" />
+    <uses-permission android:name="getui.permission.GetuiService.com.girl.sorority" />
+
+    <permission
+        android:name="getui.permission.GetuiService.com.girl.sorority"
+        android:protectionLevel="normal" />
+
+    <uses-feature
+        android:glEsVersion="0x20000"
+        android:required="true" />
+    <uses-feature
+        android:name="android.hardware.camera"
+        android:required="false" />
+    <uses-feature
+        android:name="android.hardware.location"
+        android:required="false" />
+
+    <meta-data
+        android:name="com.google.android.geo.API_KEY"
+        android:value="@string/google_maps_api_key" />
+
+    <activity
+        android:clearTaskOnLaunch="true"
+        android:name="com.mainpub.sorority.Activity.WelcomeActivity"
+        android:screenOrientation="portrait" />
+    <activity
+        android:name="com.mainpub.sorority.Activity.RegisterActivity"
+        android:screenOrientation="portrait"
+        android:windowSoftInputMode="stateAlwaysHidden|adjustResize" />
+    <activity
+        android:name="com.mainpub.sorority.Activity.EmailLoginActivity"
+        android:screenOrientation="portrait"
+        android:windowSoftInputMode="stateAlwaysHidden|adjustResize" />
+    <activity
+        android:launchMode="singleInstance"
+        android:name="com.girl.sorority.login.SignInOrUpActivity"
+        android:screenOrientation="portrait"
+        android:windowSoftInputMode="stateAlwaysHidden|adjustResize" />
+    <activity
+        android:name="com.mainpub.sorority.Activity.RegisterUserActivity"
+        android:screenOrientation="portrait"
+        android:windowSoftInputMode="stateAlwaysHidden" />
+    <activity
+        android:name="com.girl.sorority.login.ZipCodeVerifyActivity"
+        android:screenOrientation="portrait"
+        android:windowSoftInputMode="stateAlwaysHidden" />
+    <activity
+        android:name="com.girl.sorority.common.currency.SelectCurrencyActivity"
+        android:screenOrientation="portrait" />
+    <activity
+        android:exported="true"
+        android:launchMode="singleTop"
+        android:name="com.mainpub.sorority.Activity.MainTabActivity"
+        android:screenOrientation="portrait"
+        android:theme="@style/AppTheme.OpaqueStatus"
+        android:windowSoftInputMode="adjustNothing|stateAlwaysHidden" />
+    <activity
+        android:name="com.girl.sorority.message.TabMessageActivity"
+        android:screenOrientation="portrait" />
+    <activity
+        android:name="com.mainpub.sorority.Activity.TabProfileActivity"
+        android:screenOrientation="portrait" />
+    <activity
+        android:name="com.mainpub.sorority.Activity.ReportActivity"
+        android:screenOrientation="portrait"
+        android:windowSoftInputMode="stateAlwaysHidden|adjustResize" />
+    <activity
+        android:name="com.girl.sorority.offer.MakeOfferActivity"
+        android:screenOrientation="portrait"
+        android:theme="@style/AppTheme.White"
+        android:windowSoftInputMode="adjustResize|stateVisible" />
+    <activity
+        android:name="com.girl.sorority.common.category.CategoryActivity"
+        android:screenOrientation="portrait" />
+    <activity android:name="com.mainpub.sorority.Activity.LargeImageActivity" />
+    <activity
+        android:name="com.mainpub.sorority.Activity.SettingActivity"
+        android:screenOrientation="portrait" />
+    <activity
+        android:name="com.mainpub.sorority.Activity.ComplainActivity"
+        android:screenOrientation="portrait"
+        android:windowSoftInputMode="stateVisible" />
+    <activity
+        android:name="com.mainpub.sorority.Activity.ItemLocationMapActivity"
+        android:screenOrientation="portrait" />
+    <activity
+        android:name="com.mainpub.sorority.Activity.SearchResultActivity"
+        android:screenOrientation="portrait"
+        android:windowSoftInputMode="stateAlwaysHidden" />
+    <activity
+        android:name="com.mainpub.sorority.Activity.OtherProfileActivity"
+        android:screenOrientation="portrait" />
+    <activity
+        android:name="com.mainpub.sorority.Activity.BuyingActivity"
+        android:screenOrientation="portrait" />
+    <activity
+        android:name="com.mainpub.sorority.Activity.WatchingActivity"
+        android:screenOrientation="portrait" />
+    <activity
+        android:name="com.mainpub.sorority.Activity.MyProfileActivity"
+        android:screenOrientation="portrait" />
+    <activity
+        android:name="com.mainpub.sorority.Activity.ChangeNicknameActivity"
+        android:screenOrientation="portrait" />
+    <activity
+        android:name="com.mainpub.sorority.Activity.FmWebActivity"
+        android:screenOrientation="portrait" />
+    <activity
+        android:name="com.mainpub.sorority.Activity.FollowingActivity"
+        android:screenOrientation="portrait" />
+    <activity
+        android:name="com.mainpub.sorority.Activity.FollowerActivity"
+        android:screenOrientation="portrait" />
+    <activity android:name="com.facebook.LoginActivity" />
+
+    <service
+        android:exported="false"
+        android:name="com.girl.sorority.framework.service.BackgroundTaskService" />
+
+    <activity
+        android:name="com.soundcloud.android.crop.CropImageActivity"
+        android:screenOrientation="portrait" />
+    <activity
+        android:label="@string/title_activity_reset_password"
+        android:name="com.girl.sorority.login.ResetPasswordActivity"
+        android:screenOrientation="portrait" />
+    <activity
+        android:label="@string/title_activity_quick_tour"
+        android:name="com.girl.sorority.login.QuickTourActivity"
+        android:screenOrientation="portrait" />
+    <activity
+        android:name="com.girl.sorority.main.home.HomeActivity"
+        android:screenOrientation="portrait" />
+    <activity
+        android:name="com.girl.sorority.main.listing.ListItemActivity"
+        android:screenOrientation="portrait"
+        android:windowSoftInputMode="adjustResize|stateHidden" />
+    <activity
+        android:name="com.girl.sorority.common.brand.BrandActivity"
+        android:screenOrientation="portrait"
+        android:windowSoftInputMode="adjustResize|stateVisible" />
+    <activity
+        android:name="com.girl.sorority.framework.activity.SelectionListActivity"
+        android:screenOrientation="portrait" />
+    <activity
+        android:name="com.girl.sorority.item.ItemActivity"
+        android:screenOrientation="portrait">
+        <intent-filter>
+            <action android:name="android.intent.action.VIEW" />
+
+            <category android:name="android.intent.category.DEFAULT" />
+            <category android:name="android.intent.category.BROWSABLE" />
+
+            <data
+                android:host="sororityapp.com"
+                android:pathPattern="/item/.*"
+                android:scheme="http" />
+        </intent-filter>
+    </activity>
+    <activity
+        android:launchMode="singleInstance"
+        android:name="com.girl.sorority.main.profile.ProfileRouteActivity"
+        android:theme="@style/AppTheme.Translucent">
+        <intent-filter>
+            <action android:name="android.intent.action.VIEW" />
+
+            <category android:name="android.intent.category.DEFAULT" />
+            <category android:name="android.intent.category.BROWSABLE" />
+
+            <data
+                android:host="sororityapp.com"
+                android:pathPattern="/person/.*"
+                android:scheme="http" />
+        </intent-filter>
+    </activity>
+    <activity
+        android:name="com.mainpub.sorority.Activity.GuidePagerActivity"
+        android:screenOrientation="portrait">
+        <intent-filter>
+            <action android:name="android.intent.action.MAIN" />
+            <category android:name="android.intent.category.LAUNCHER" />
+        </intent-filter>
+        <intent-filter>
+            <action android:name="android.intent.action.VIEW" />
+
+            <category android:name="android.intent.category.DEFAULT" />
+            <category android:name="android.intent.category.BROWSABLE" />
+
+            <data android:scheme="sorority" />
+        </intent-filter>
+        <intent-filter>
+            <data
+                android:host="open"
+                android:scheme="sorority" />
+            <action android:name="android.intent.action.VIEW" />
+
+            <category android:name="android.intent.category.DEFAULT" />
+            <category android:name="android.intent.category.BROWSABLE" />
+        </intent-filter>
+    </activity>
+    <activity
+        android:name="com.girl.sorority.reco.SellersNearbyActivity"
+        android:screenOrientation="portrait" />
+    <activity
+        android:name="com.girl.sorority.item.MarkSoldWebActivity"
+        android:screenOrientation="portrait" />
+    <activity
+        android:name="com.girl.sorority.common.gallery.ui.ImagePickerActivity"
+        android:screenOrientation="portrait" />
+    <activity
+        android:name="com.girl.sorority.appointment.AppointmentHistoryActivity"
+        android:screenOrientation="portrait" />
+
+    <meta-data
+        android:name="PUSH_APPID"
+        android:value="h5bghbdWR77kT8cO9mIzn4" />
+    <meta-data
+        android:name="PUSH_APPKEY"
+        android:value="KaMlKSsJdm7cmJlXdoyVg3" />
+    <meta-data
+        android:name="PUSH_APPSECRET"
+        android:value="mqiuZORyml9l9P6iswx3a1" />
+    <meta-data
+        android:name="PUSH_GROUPID"
+        android:value="" />
+    <meta-data
+        android:name="APP_PUB_TYPE"
+        android:value="@string/app_pub_type" />
+    <meta-data
+        android:name="BRANCH_URL_PREFIX"
+        android:value="@string/branch_url_prefix" />
+    <meta-data
+        android:name="io.branch.sdk.BranchKey"
+        android:value="key_live_kmle6OJW2Y2YyhBn5ZzejhnpclhZGHvO" />
+    <meta-data
+        android:name="io.branch.sdk.BranchKey.test"
+        android:value="key_live_kmle6OJW2Y2YyhBn5ZzejhnpclhZGHvO" />
+
+    <service
+        android:exported="true"
+        android:label="NotificationCenter"
+        android:name="com.igexin.sdk.PushService"
+        android:process=":pushservice" />
+    <service
+        android:exported="true"
+        android:label="NotificationCenterUser"
+        android:name="com.igexin.sdk.PushServiceUser" />
+
+    <receiver android:name="com.igexin.sdk.PushReceiver">
+        <intent-filter>
+            <action android:name="android.intent.action.BOOT_COMPLETED" />
+            <action android:name="android.net.conn.CONNECTIVITY_CHANGE" />
+            <action android:name="android.intent.action.USER_PRESENT" />
+            <action android:name="com.igexin.sdk.action.refreshls" />
+            <action android:name="android.intent.action.MEDIA_MOUNTED" />
+            <action android:name="android.intent.action.ACTION_POWER_CONNECTED" />
+            <action android:name="android.intent.action.ACTION_POWER_DISCONNECTED" />
+        </intent-filter>
+    </receiver>
+    <receiver
+        android:exported="false"
+        android:name="com.igexin.sdk.PushManagerReceiver">
+        <intent-filter>
+            <action android:name="com.igexin.sdk.action.pushmanager" />
+        </intent-filter>
+    </receiver>
+
+    <activity
+        android:excludeFromRecents="true"
+        android:exported="false"
+        android:name="com.igexin.sdk.PushActivity"
+        android:process=":pushservice"
+        android:taskAffinity="com.igexin.sdk.PushActivityTask" />
+    <activity
+        android:configChanges="keyboard|keyboardHidden|orientation"
+        android:excludeFromRecents="true"
+        android:exported="false"
+        android:name="com.igexin.getuiext.activity.GetuiExtActivity"
+        android:process=":pushservice"
+        android:taskAffinity="com.igexin.sdk.PushActivityTask" />
+
+    <receiver
+        android:exported="false"
+        android:name="com.igexin.getuiext.service.PayloadReceiver">
+        <intent-filter>
+            <action android:name="com.igexin.sdk.action.7fjUl2Z3LH6xYy7NQK4ni4" />
+            <action android:name="com.igexin.sdk.action.h5bghbdWR77kT8cO9mIzn4" />
+        </intent-filter>
+    </receiver>
+
+    <service
+        android:name="com.igexin.getuiext.service.GetuiExtService"
+        android:process=":pushservice" />
+    <service
+        android:name="com.igexin.download.DownloadService"
+        android:process=":pushservice" />
+
+    <receiver
+        android:exported="false"
+        android:name="com.igexin.download.DownloadReceiver">
+        <intent-filter>
+            <action android:name="android.net.conn.CONNECTIVITY_CHANGE" />
+        </intent-filter>
+    </receiver>
+    <provider
+        android:authorities="downloads.com.girl.sorority"
+        android:name="com.igexin.download.DownloadProvider"
+        android:process=":pushservice" />
+
+    <receiver
+        android:exported="false"
+        android:name="com.girl.sorority.framework.receiver.PushReceiver">
+        <intent-filter>
+            <action android:name="com.igexin.sdk.action.h5bghbdWR77kT8cO9mIzn4" />
+        </intent-filter>
+    </receiver>
+    <receiver
+        android:name="com.appboy.AppboyGcmReceiver"
+        android:permission="com.google.android.c2dm.permission.SEND">
+        <intent-filter>
+            <action android:name="com.google.android.c2dm.intent.RECEIVE" />
+            <action android:name="com.google.android.c2dm.intent.REGISTRATION" />
+
+            <category android:name="com.girl.sorority" />
+        </intent-filter>
+    </receiver>
+    <receiver
+        android:exported="false"
+        android:name="com.girl.sorority.framework.receiver.AppboyPushReceiver">
+        <intent-filter>
+            <action android:name="com.girl.sorority.intent.APPBOY_PUSH_RECEIVED" />
+            <action android:name="com.girl.sorority.intent.APPBOY_NOTIFICATION_OPENED" />
+        </intent-filter>
+    </receiver>
+
+    <activity
+        android:name="com.girl.sorority.item.FeaturedCollectionActivity"
+        android:screenOrientation="portrait" />
+    <activity
+        android:name="com.girl.sorority.common.phone.VerifyPhoneActivity"
+        android:screenOrientation="portrait" />
+    <activity
+        android:name="com.girl.sorority.offer.BuyItemActivity"
+        android:screenOrientation="portrait"
+        android:windowSoftInputMode="stateAlwaysHidden|adjustResize" />
+    <activity
+        android:name="com.girl.sorority.review.ReviewActivity"
+        android:screenOrientation="portrait"
+        android:windowSoftInputMode="stateAlwaysHidden|adjustResize" />
+    <activity
+        android:name="com.girl.sorority.review.ReviewListActivity"
+        android:screenOrientation="portrait" />
+    <activity
+        android:name="com.girl.sorority.profile.MyItemsActivity"
+        android:screenOrientation="portrait"
+        android:theme="@style/AppTheme.OpaqueStatus" />
+    <activity
+        android:name="com.girl.sorority.search.SearchActivity"
+        android:screenOrientation="portrait"
+        android:windowSoftInputMode="stateAlwaysHidden|adjustResize" />
+    <activity
+        android:name="com.girl.sorority.profile.UpdateEmailActivity"
+        android:screenOrientation="portrait"
+        android:windowSoftInputMode="stateVisible" />
+    <activity
+        android:name="com.girl.sorority.search.KeyWordAndUserSearchActivity"
+        android:screenOrientation="portrait"
+        android:windowSoftInputMode="adjustNothing|stateVisible" />
+
+    <meta-data
+        android:name="io.fabric.ApiKey"
+        android:value="7ea45f8a57888457433d41c326749bc86578b9a6" />
+    <meta-data
+        android:name="com.google.android.gms.version"
+        android:value="@integer/google_play_services_version" />
+
+    <receiver
+        android:exported="true"
+        android:name="com.google.android.gms.gcm.GcmReceiver"
+        android:permission="com.google.android.c2dm.permission.SEND">
+        <intent-filter>
+            <action android:name="com.google.android.c2dm.intent.RECEIVE" />
+            <action android:name="com.google.android.c2dm.intent.REGISTRATION" />
+
+            <category android:name="com.girl.sorority" />
+        </intent-filter>
+    </receiver>
+
+    <service
+        android:exported="false"
+        android:name="com.girl.sorority.framework.service.GcmInstanceIDService">
+        <intent-filter>
+            <action android:name="com.google.android.gms.iid.InstanceID" />
+        </intent-filter>
+    </service>
+    <service
+        android:exported="false"
+        android:name="com.girl.sorority.framework.service.GcmService">
+        <intent-filter>
+            <action android:name="com.google.android.c2dm.intent.RECEIVE" />
+        </intent-filter>
+    </service>
+    <service
+        android:exported="false"
+        android:name="com.girl.sorority.framework.service.GcmRegistrationService" />
+
+    <receiver
+        android:enabled="true"
+        android:name="com.girl.sorority.util.ConnectivityStateReceiver">
+        <intent-filter>
+            <action android:name="android.net.conn.CONNECTIVITY_CHANGE" />
+        </intent-filter>
+    </receiver>
+
+    <activity
+        android:name="com.girl.sorority.framework.activity.SelectionListDialogActivity"
+        android:screenOrientation="portrait"
+        android:theme="@style/AppDialogTheme" />
+    <activity
+        android:name="com.girl.sorority.profile.ItemInspectDialogActivity"
+        android:screenOrientation="portrait"
+        android:theme="@style/AppDialogTheme" />
+    <activity
+        android:name="com.girl.sorority.common.debugging.EnvSettingActivity"
+        android:screenOrientation="portrait" />
+    <activity
+        android:name="com.girl.sorority.framework.activity.RestoreTaskActivity"
+        android:theme="@style/AppTheme.Translucent" />
+    <activity
+        android:name="com.girl.sorority.profile.UserSoldActivity"
+        android:screenOrientation="portrait" />
+    <activity
+        android:name="com.girl.sorority.appointment.MakeAppointmentActivity"
+        android:screenOrientation="portrait" />
+    <activity
+        android:name="com.girl.sorority.appointment.AppointmentEditPriceActivity"
+        android:screenOrientation="portrait"
+        android:windowSoftInputMode="adjustResize|stateVisible" />
+
+    <provider
+        android:authorities="com.girl.sorority.google_measurement_service"
+        android:exported="false"
+        android:name="com.google.android.gms.measurement.AppMeasurementContentProvider" />
+    <receiver
+        android:enabled="true"
+        android:name="com.google.android.gms.measurement.AppMeasurementReceiver">
+        <intent-filter>
+            <action android:name="com.google.android.gms.measurement.UPLOAD" />
+        </intent-filter>
+    </receiver>
+
+    <service
+        android:enabled="true"
+        android:exported="false"
+        android:name="com.google.android.gms.measurement.AppMeasurementService" />
+    <service android:name="com.appboy.services.AppboyDataSyncService" />
+
+</manifest>

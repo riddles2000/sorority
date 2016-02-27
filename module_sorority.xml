@@ -1,0 +1,85 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project name="module_5mile" default="compile.module.5mile">
+    <dirname property="module.5mile.basedir" file="${ant.file.module_5mile}" />
+
+    <property name="module.jdk.home.5mile" value="${jdk.home.android_api_22_platform}" />
+    <property name="module.jdk.bin.5mile" value="${jdk.bin.android_api_22_platform}" />
+    <property name="module.jdk.classpath.5mile" value="jdk.classpath.android_api_22_platform" />
+
+    <property name="compiler.args.5mile"
+        value="-encoding windows-1252 -source 1.6 ${compiler.args}" />
+
+    <property name="5mile.output.dir" value="${module.5mile.basedir}/build" />
+    <property name="5mile.testoutput.dir" value="${module.5mile.basedir}/build" />
+
+    <path id="5mile.module.bootclasspath">
+        <!-- Paths to be included in compilation bootclasspath -->
+    </path>
+
+    <path id="5mile.module.production.classpath">
+        <path refid="${module.jdk.classpath.5mile}" />
+    </path>
+
+    <path id="5mile.runtime.production.module.classpath">
+        <pathelement location="${5mile.output.dir}" />
+    </path>
+
+    <path id="5mile.module.classpath">
+        <path refid="${module.jdk.classpath.5mile}" />
+        <pathelement location="${5mile.output.dir}" />
+    </path>
+
+    <path id="5mile.runtime.module.classpath">
+        <pathelement location="${5mile.output.dir}" />
+    </path>
+
+
+    <patternset id="excluded.from.module.5mile">
+        <patternset refid="ignored.files" />
+    </patternset>
+
+    <patternset id="excluded.from.compilation.5mile">
+        <patternset refid="excluded.from.module.5mile" />
+    </patternset>
+
+    <path id="5mile.module.sourcepath">
+        <dirset dir="${module.5mile.basedir}">
+            <include name="gen" />
+        </dirset>
+    </path>
+
+
+    <target name="compile.module.5mile"
+        depends="compile.module.5mile.production,compile.module.5mile.tests"
+        description="Compile module 5mile" />
+
+    <target name="compile.module.5mile.production" depends="register.custom.compilers"
+        description="Compile module 5mile; production classes">
+        <mkdir dir="${5mile.output.dir}" />
+        <javac2 destdir="${5mile.output.dir}" debug="${compiler.debug}"
+            nowarn="${compiler.generate.no.warnings}" memorymaximumsize="${compiler.max.memory}"
+            fork="true" executable="${module.jdk.bin.5mile}/javac">
+            <compilerarg line="${compiler.args.5mile}" />
+            <bootclasspath refid="5mile.module.bootclasspath" />
+            <classpath refid="5mile.module.production.classpath" />
+            <src refid="5mile.module.sourcepath" />
+            <patternset refid="excluded.from.compilation.5mile" />
+        </javac2>
+
+        <copy todir="${5mile.output.dir}">
+            <fileset dir="${module.5mile.basedir}/gen">
+                <patternset refid="compiler.resources" />
+                <type type="file" />
+            </fileset>
+        </copy>
+    </target>
+
+    <target name="compile.module.5mile.tests"
+        depends="register.custom.compilers,compile.module.5mile.production"
+        description="compile module 5mile; test classes" unless="skip.tests" />
+
+    <target name="clean.module.5mile" description="cleanup module">
+        <delete dir="${5mile.output.dir}" />
+        <delete dir="${5mile.testoutput.dir}" />
+    </target>
+</project>
